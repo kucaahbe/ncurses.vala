@@ -12,6 +12,10 @@ namespace Curses {
     public int top();
     [CCode (cname = "bottom_panel")]
     public int botton();
+    [CCode (cname = "show_panel")]
+    public int show();
+    [CCode (cname = "hide_panel")]
+    public int hide();
 
     public static void update_panels();
   }
