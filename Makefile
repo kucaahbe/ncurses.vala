@@ -1,7 +1,8 @@
 .DEFAULT: all
 
 demos = just-text \
-	window-with-text
+	window-with-text\
+	two-windows
 demos_files = $(patsubst %, %.exe, $(demos))
 
 .PHONY: all
