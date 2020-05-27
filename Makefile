@@ -4,7 +4,8 @@ demos = just-text \
 	window-with-text\
 	two-windows \
 	doupdate \
-	panels
+	panels \
+	panels-switch
 demos_files = $(patsubst %, %.exe, $(demos))
 
 .PHONY: all
