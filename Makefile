@@ -2,7 +2,8 @@
 
 demos = just-text \
 	window-with-text\
-	two-windows
+	two-windows \
+	doupdate
 demos_files = $(patsubst %, %.exe, $(demos))
 
 .PHONY: all
