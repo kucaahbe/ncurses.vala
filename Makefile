@@ -6,7 +6,8 @@ demos = just-text \
 	doupdate \
 	panels \
 	panels-switch \
-	panels-toggle
+	panels-toggle \
+	panels-move
 demos_files = $(patsubst %, %.exe, $(demos))
 
 .PHONY: all
