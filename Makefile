@@ -9,7 +9,8 @@ demos = just-text \
 	panels-toggle \
 	panels-move \
 	panels-resize \
-	panels-show-hide
+	panels-show-hide \
+	colors
 demos_files = $(patsubst %, %.exe, $(demos))
 
 .PHONY: all
