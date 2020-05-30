@@ -17,7 +17,7 @@ public class Demo {
   }
 
   public void start() {
-    unowned var stdscr = initscr();
+    unowned Window stdscr = initscr();
     noecho();
     stdscr.keypad(true);
   }
