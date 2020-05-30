@@ -4,6 +4,14 @@ namespace Curses {
   public class Panel {
     [CCode (cname = "new_panel")]
     public Panel(Window win);
+
+    public Window window {
+      [CCode (cname = "panel_window")] get;
+    }
+
+    [CCode (cname = "replace_panel")]
+    public int replace(Window win);
+
     public void * userptr {
       [CCode (cname = "panel_userptr")]     get;
       [CCode (cname = "set_panel_userptr")] set;

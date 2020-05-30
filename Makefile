@@ -7,15 +7,16 @@ demos = just-text \
 	panels \
 	panels-switch \
 	panels-toggle \
-	panels-move
+	panels-move \
+	panels-resize
 demos_files = $(patsubst %, %.exe, $(demos))
 
 .PHONY: all
 all: $(demos_files)
 
 %.exe: %.vala
-	valac -g --vapidir=. --pkg curses --pkg curses-panel --pkg posix -X -lcurses -X -lpanel $(patsubst %.exe, %, $@).vala -o $@
+	valac --save-temps -g --vapidir=. --pkg curses --pkg curses-panel --pkg posix -X -lcurses -X -lpanel $(patsubst %.exe, %, $@).vala -o $@
 
 .PHONY: clean
 clean:
-	rm -f $(demos_files)
+	rm -rf $(demos_files) *.c *.dSYM
