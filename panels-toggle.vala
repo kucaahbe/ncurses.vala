@@ -36,13 +36,13 @@ public class Demo {
   private Panel panel1;
   private Panel panel2;
   public void activate() {
-    this.window1 = new Window(5, 20, 1, 1);
+    this.window1 = new Window(5, 20, 2, 2);
     panel1 = new Panel(window1);
     this.window1.box(0, 0);
     this.window1.mvprintw(1, 1, "I am in window 1");
     //this.window1.noutrefresh();
 
-    this.window2 = new Window(5, 20, 2, 19);
+    this.window2 = new Window(5, 20, 3, 20);
     panel2 = new Panel(window2);
     this.window2.box(0, 0);
     this.window2.mvprintw(1, 1, "I am in window 2");
