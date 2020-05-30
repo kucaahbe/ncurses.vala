@@ -24,6 +24,8 @@ namespace Curses {
     public int show();
     [CCode (cname = "hide_panel")]
     public int hide();
+    [CCode (cname = "panel_hidden")]
+    public int hidden();
 
     [CCode (cname = "move_panel")]
     public int move(int y, int x);
