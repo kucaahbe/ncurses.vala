@@ -20,6 +20,10 @@ namespace Curses {
     public int top();
     [CCode (cname = "bottom_panel")]
     public int botton();
+    [CCode (cname = "panel_above")]
+    public unowned Panel? above();
+    [CCode (cname = "panel_below")]
+    public unowned Panel? below();
     [CCode (cname = "show_panel")]
     public int show();
     [CCode (cname = "hide_panel")]
@@ -30,6 +34,10 @@ namespace Curses {
     [CCode (cname = "move_panel")]
     public int move(int y, int x);
 
+    [CCode (cname = "panel_above")]
+    public static unowned Panel? above_all(Panel? panel = null);
+    [CCode (cname = "panel_below")]
+    public static unowned Panel? below_all(Panel? panel = null);
     public static void update_panels();
   }
 }

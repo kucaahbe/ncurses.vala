@@ -23,6 +23,13 @@ public class Demo {
     endwin();
   }
 
+  private void echo(string msg, ...) {
+    stdscr.move(0,1);
+    var l = va_list ();
+    stdscr.vprintw(msg, l);
+    stdscr.refresh();
+  }
+
   private Window window1;
   private Window window2;
 
@@ -53,18 +60,20 @@ public class Demo {
         loop.quit();
       } else if (c == 's') {
         top_panel.show();
-        Panel.update_panels();
-        doupdate();
       } else if (c == 'h') {
         top_panel.hide();
-        Panel.update_panels();
-        doupdate();
       } else {
         top_panel = (Panel) top_panel.userptr;
         top_panel.top();
-        Panel.update_panels();
-        doupdate();
       }
+
+      echo("abs top panel=%p panel1 top=%p panel2 top=%p panel1 bottom=%p panel2 bottom=%p",
+           Panel.above_all(),
+           panel1.above(), panel2.above(),
+           panel1.below(), panel2.below());
+
+      Panel.update_panels();
+      doupdate();
 
       return Source.CONTINUE;
     });
