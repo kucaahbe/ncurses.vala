@@ -24,6 +24,8 @@ public class Demo {
     start_color();
     noecho();
 
+    mousemask(MouseMask.ALL_MOUSE_EVENTS, null);
+
     init_pair(1, Color.BLUE, Color.BLACK);
     init_pair(2, Color.WHITE, Color.BLACK);
   }
@@ -48,6 +50,26 @@ public class Demo {
       var c = active_win.getch();
 
       switch (c) {
+        case Key.MOUSE:
+          MouseEvent event;
+          if (getmouse(out event) == false) {
+            //echo("x=%i y=%i z=%i   ",
+            //     event.x,
+            //     event.y,
+            //     event.z
+            //    );
+            if (win1.wenclose(event.y, event.x)) {
+              active_win.make_inactive();
+              active_win = win1;
+            } else if (win2.wenclose(event.y, event.x)) {
+              active_win.make_inactive();
+              active_win = win2;
+            }
+            active_win.make_active();
+          } else {
+            echo("smth went wrong");
+          }
+          break;
         case Key.LEFT:
           active_win.make_inactive();
           active_win = win1;
@@ -90,6 +112,13 @@ public class Demo {
 
     return EXIT_SUCCESS;
   }
+
+  private void echo(string msg, ...) {
+    stdscr.move(0,1);
+    var l = va_list ();
+    stdscr.vprintw(msg, l);
+    stdscr.refresh();
+  }
 }
 
 private class Window {
@@ -102,6 +131,10 @@ private class Window {
 
   public void refresh() {
     window.noutrefresh();
+  }
+
+  public bool wenclose(int y, int x) {
+    return window.wenclose(y, x);
   }
 
   public void send_input(int c) {

@@ -264,6 +264,8 @@ namespace Curses {
 		public int touchln(int y, int n, int changed);
 		[CCode (cname = "wvline")]
 		public int vline(ulong ch, int n);
+		[CCode (cname = "wenclose")]
+		public bool wenclose(int y, int x);
 	}
 
 	[Compact]
@@ -471,8 +473,36 @@ namespace Curses {
 		long bstate;
 	}
 
-	[CCode (cprefix="", has_type_id = false)]
+	[CCode (cname = "mmask_t", cprefix="", has_type_id = false)]
 	public enum MouseMask {
+                BUTTON1_PRESSED,
+                BUTTON1_RELEASED,
+                BUTTON1_CLICKED,
+                BUTTON1_DOUBLE_CLICKED,
+                BUTTON1_TRIPLE_CLICKED,
+                BUTTON2_PRESSED,
+                BUTTON2_RELEASED,
+                BUTTON2_CLICKED,
+                BUTTON2_DOUBLE_CLICKED,
+                BUTTON2_TRIPLE_CLICKED,
+                BUTTON3_PRESSED,
+                BUTTON3_RELEASED,
+                BUTTON3_CLICKED,
+                BUTTON3_DOUBLE_CLICKED,
+                BUTTON3_TRIPLE_CLICKED,
+                BUTTON4_PRESSED,
+                BUTTON4_RELEASED,
+                BUTTON4_CLICKED,
+                BUTTON4_DOUBLE_CLICKED,
+                BUTTON4_TRIPLE_CLICKED,
+                BUTTON5_PRESSED,
+                BUTTON5_RELEASED,
+                BUTTON5_CLICKED,
+                BUTTON5_DOUBLE_CLICKED,
+                BUTTON5_TRIPLE_CLICKED,
+                BUTTON_SHIFT,
+                BUTTON_CTRL,
+                BUTTON_ALT,
 		ALL_MOUSE_EVENTS,
 		REPORT_MOUSE_POSITION
 	}
