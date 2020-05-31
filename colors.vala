@@ -47,7 +47,7 @@ public class Demo {
     for (int y = 0; y < LINES-1; y++) {
       for (int x = 0; x < COLS; x++) {
         if (c > 255) {
-          break;
+          c = 0;
         }
         attron(COLOR_PAIR(c));
         mvprintw(y, x, "+");
