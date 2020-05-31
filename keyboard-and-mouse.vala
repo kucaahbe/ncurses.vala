@@ -24,7 +24,7 @@ public class Demo {
     start_color();
     noecho();
 
-    mousemask(MouseMask.ALL_MOUSE_EVENTS, null);
+    mousemask(MouseMask.BUTTON1_CLICKED, null);
 
     init_pair(1, Color.BLUE, Color.BLACK);
     init_pair(2, Color.WHITE, Color.BLACK);

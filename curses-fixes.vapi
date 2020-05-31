@@ -514,52 +514,8 @@ namespace Curses {
 		ALT,
 	}
 
-	[CCode (has_type_id = false)]
-	public enum Button1 {
-		PRESSED,
-		RELEASED,
-		CLICKED,
-		DOUBLE_CLICKED,
-		TRIPLE_CLICKED
-	}
-
-	[CCode (has_type_id = false)]
-	public enum Button2 {
-		PRESSED,
-		RELEASED,
-		CLICKED,
-		DOUBLE_CLICKED,
-		TRIPLE_CLICKED
-	}
-
-	[CCode (has_type_id = false)]
-	public enum Button3 {
-		PRESSED,
-		RELEASED,
-		CLICKED,
-		DOUBLE_CLICKED,
-		TRIPLE_CLICKED
-	}
-
-	[CCode (has_type_id = false)]
-	public enum Button4 {
-		PRESSED,
-		RELEASED,
-		CLICKED,
-		DOUBLE_CLICKED,
-		TRIPLE_CLICKED
-	}
-
-	[CCode (has_type_id = false)]
-	public enum Button5 {
-		PRESSED,
-		RELEASED,
-		CLICKED,
-		DOUBLE_CLICKED,
-		TRIPLE_CLICKED
-	}
-
 	public bool getmouse(out MouseEvent me);
+	public bool ungetmouse(MouseEvent me);
 	public int mouseinterval(int erval);
 	public int mousemask(MouseMask @new, out MouseMask old);
 }
