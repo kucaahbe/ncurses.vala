@@ -10,14 +10,15 @@ demos = just-text \
 	panels-move \
 	panels-resize \
 	panels-show-hide \
-	colors
+	colors \
+	keyboard-and-mouse
 demos_files = $(patsubst %, %.exe, $(demos))
 
 .PHONY: all
 all: $(demos_files)
 
 %.exe: %.vala
-	valac --save-temps -g --vapidir=. --pkg curses --pkg curses-panel --pkg posix -X -lcurses -X -lpanel $(patsubst %.exe, %, $@).vala -o $@
+	valac --save-temps -g --vapidir=. --pkg curses-fixes --pkg curses-panel --pkg posix -X -lcurses -X -lpanel $(patsubst %.exe, %, $@).vala -o $@
 
 .PHONY: clean
 clean:
