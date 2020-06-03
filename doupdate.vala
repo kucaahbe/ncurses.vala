@@ -24,15 +24,15 @@ public class Demo {
   private Window window1;
   private Window window2;
   public void activate() {
-    this.window1 = new Window(5, 20, 1, 1);
-    this.window1.box(0, 0);
-    this.window1.mvprintw(1, 1, "I am in window 1");
-    this.window1.noutrefresh();
+    window1 = new Window(5, 20, 1, 1);
+    window1.box(0, 0);
+    window1.mvprintw(1, 1, "I am in window 1");
+    window1.noutrefresh();
 
-    this.window2 = new Window(5, 20, 1, 21);
-    this.window2.box(0, 0);
-    this.window2.mvprintw(1, 1, "I am in window 2");
-    //this.window2.noutrefresh();
+    window2 = new Window(5, 20, 1, 21);
+    window2.box(0, 0);
+    window2.mvprintw(1, 1, "I am in window 2");
+    window2.noutrefresh();
   }
 
   public void run() {

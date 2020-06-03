@@ -12,7 +12,8 @@ demos = just-text \
 	panels-show-hide \
 	colors \
 	keyboard-and-mouse \
-	menu
+	menu \
+	menu-with-window
 demos_files = $(patsubst %, %.exe, $(demos))
 
 .PHONY: all
