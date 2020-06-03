@@ -24,6 +24,7 @@ public class Demo {
   }
 
   public void stop() {
+    menu.unpost();
     endwin();
   }
 
