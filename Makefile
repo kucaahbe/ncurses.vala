@@ -24,7 +24,7 @@ all: $(demos_files)
 %.exe: %.vala
 	valac -v --save-temps -g \
 	  --vapidir=vapi --pkg curses-fixes --pkg curses-panel --pkg curses-menu --pkg posix \
-	  -X -L/usr/local/Cellar/ncurses/6.1/lib -X -I/usr/local/Cellar/ncurses/6.1/include \
+	  -X -L/usr/local/opt/ncurses/lib -X -I/usr/local/opt/ncurses/include \
 	  -X -lmenu -X -lcurses -X -lpanel \
 	  $(patsubst %.exe, %, $@).vala -o $@
 
