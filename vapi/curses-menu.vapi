@@ -45,6 +45,42 @@ namespace Curses {
     public int set_format(int rows, int cols);
     [CCode (cname = "menu_format")]
     public void format(out int rows, out int cols);
+
+    [CCode (cname = "set_menu_fore")]
+    public int set_fore(int attr);
+    public int fore {
+      [CCode (cname = "menu_fore")]     get;
+    }
+    [CCode (cname = "set_menu_back")]
+    public int set_back(int attr);
+    public int back {
+      [CCode (cname = "menu_back")]     get;
+    }
+    [CCode (cname = "set_menu_grey")]
+    public int set_grey(int attr);
+    public int grey {
+      [CCode (cname = "menu_grey")]     get;
+    }
+    [CCode (cname = "set_menu_pad")]
+    public int set_pad(int attr);
+    public int pad {
+      [CCode (cname = "menu_pad")]     get;
+    }
+
+    [CCode (cname = "set_current_item")]
+    public int set_current_item(MenuItem item);
+    public MenuItem current_item {
+      [CCode (cname = "current_item")]     get;
+    }
+
+    [CCode (cname = "set_top_row")]
+    public int set_top_row(int row);
+    public int top_row {
+      [CCode (cname = "top_row")]     get;
+    }
+
+    [CCode (cname = "pos_menu_cursor")]
+    public int pos_cursor();
   }
 
   [Compact]
@@ -52,6 +88,26 @@ namespace Curses {
   public class MenuItem {
     [CCode (cname = "new_item")]
     public MenuItem(string name, string description);
+
+    public string name {
+      [CCode (cname = "item_name")]     get;
+    }
+    public string description {
+      [CCode (cname = "item_description")]     get;
+    }
+    public int index {
+      [CCode (cname = "item_index")]     get;
+    }
+
+    [CCode (cname = "set_item_opts")]
+    public int set_opts(ItemOption opts);
+    [CCode (cname = "item_opts_on")]
+    public int opts_on(ItemOption opts);
+    [CCode (cname = "item_opts_off")]
+    public int opts_off(ItemOption opts);
+    public ItemOption opts {
+      [CCode (cname = "item_opts")]     get;
+    }
   }
 
   [CCode (cprefix = "REQ_", has_type_id = false)]
@@ -96,5 +152,10 @@ namespace Curses {
        IGNORECASE,
        SHOWMATCH,
        NONCYCLIC
+  }
+
+  [CCode (cname = "Item_Options", cprefix = "O_", has_type_id = false)]
+  public enum ItemOption {
+       SELECTABLE
   }
 }

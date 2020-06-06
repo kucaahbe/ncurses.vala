@@ -14,7 +14,9 @@ demos = just-text \
 	keyboard-and-mouse \
 	menu \
 	menu-with-window \
-	menu-multicolumn
+	menu-multicolumn \
+	menu-options
+
 demos_files = $(patsubst %, %.exe, $(demos))
 
 .PHONY: all
