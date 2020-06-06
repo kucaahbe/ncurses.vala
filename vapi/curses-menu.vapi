@@ -108,6 +108,12 @@ namespace Curses {
     public ItemOption opts {
       [CCode (cname = "item_opts")]     get;
     }
+
+    [CCode (cname = "set_item_userptr")]
+    public int set_userptr(void * userptr);
+    public void * userptr {
+      [CCode (cname = "item_userptr")]     get;
+    }
   }
 
   [CCode (cprefix = "REQ_", has_type_id = false)]

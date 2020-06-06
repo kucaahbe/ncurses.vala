@@ -15,7 +15,8 @@ demos = just-text \
 	menu \
 	menu-with-window \
 	menu-multicolumn \
-	menu-options
+	menu-options \
+	menu-user-pointer
 
 demos_files = $(patsubst %, %.exe, $(demos))
 
