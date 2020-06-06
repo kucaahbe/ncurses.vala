@@ -40,6 +40,11 @@ namespace Curses {
     public string? mark {
       [CCode (cname = "menu_mark")]     get;
     }
+
+    [CCode (cname = "set_menu_format")]
+    public int set_format(int rows, int cols);
+    [CCode (cname = "menu_format")]
+    public void format(out int rows, out int cols);
   }
 
   [Compact]

@@ -13,7 +13,8 @@ demos = just-text \
 	colors \
 	keyboard-and-mouse \
 	menu \
-	menu-with-window
+	menu-with-window \
+	menu-multicolumn
 demos_files = $(patsubst %, %.exe, $(demos))
 
 .PHONY: all
