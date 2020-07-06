@@ -15,8 +15,12 @@ public class Demo {
   }
 
   public void start() {
+    Intl.setlocale(); // setlocale(LC_ALL, "")
     initscr();
+    start_color();
     noecho();
+    init_pair(BG_WHITE_ON_RED, Color.WHITE, Color.RED);
+    init_pair(BG_WHITE_ON_BLUE, Color.WHITE, Color.BLUE);
   }
 
   public void stop() {
@@ -25,18 +29,22 @@ public class Demo {
 
   private Window window1;
   private Window window2;
+  private const short BG_WHITE_ON_RED = 1;
+  private const short BG_WHITE_ON_BLUE = 2;
 
   private Panel panel1;
   private Panel panel2;
   public void activate() {
     this.window1 = new Window(5, 20, 1, 1);
     panel1 = new Panel(window1);
+    window1.bkgd(COLOR_PAIR(BG_WHITE_ON_RED));
     this.window1.box(0, 0);
     this.window1.mvprintw(1, 1, "I am in window 1");
     //this.window1.noutrefresh();
 
     this.window2 = new Window(5, 20, 2, 19);
     panel2 = new Panel(window2);
+    window2.bkgdset(COLOR_PAIR(BG_WHITE_ON_BLUE));
     this.window2.box(0, 0);
     this.window2.mvprintw(1, 1, "I am in window 2");
     //this.window2.noutrefresh();

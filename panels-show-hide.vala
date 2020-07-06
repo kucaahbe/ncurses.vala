@@ -17,6 +17,7 @@ public class Demo {
   }
 
   public void start() {
+    Intl.setlocale(); // setlocale(LC_ALL, "")
     unowned Window stdscr = initscr();
     noecho();
     stdscr.keypad(true);
